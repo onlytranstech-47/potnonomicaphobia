@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POTNONOMICAPHOBIA - The Fear of Fearing Potatoes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --potato-brown: #8B6B4D;
+            --potato-light: #E3D5C6;
+            --potato-dark: #5C4730;
+            --potato-orange: #FF8C42;
+            --earth-brown: #A67C52;
+            --neutral-gray: #F5F5F5;
+            --text-dark: #333333;
+            --text-light: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fefefe;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 2px dashed var(--potato-brown);
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .potato-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--potato-brown);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--potato-dark);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--potato-brown);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            background-color: var(--potato-light);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-top: 10px;
+        }
+        
+        section {
+            margin-bottom: 60px;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background-color: var(--potato-light);
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--potato-dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h2 i {
+            color: var(--potato-orange);
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .highlight {
+            background-color: var(--potato-light);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid var(--potato-orange);
+            margin: 25px 0;
+        }
+        
+        .stats-box {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--neutral-gray);
+            border-radius: 10px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--potato-orange);
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        
+        ul {
+            padding-left: 25px;
+            margin-bottom: 25px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            color: var(--text-light);
+            position: relative;
+        }
+        
+        li::before {
+            content: "🥔";
+            position: absolute;
+            left: -25px;
+        }
+        
+        .manifesto {
+            background-color: #f9f3e9;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 1px dashed var(--potato-brown);
+        }
+        
+        .manifesto-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(139, 107, 77, 0.2);
+        }
+        
+        .manifesto-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .manifesto-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--potato-brown);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            text-align: center;
+            padding: 30px;
+            margin: 40px 0;
+            background-color: var(--potato-light);
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .quote::before, .quote::after {
+            content: "“";
+            font-size: 4rem;
+            color: var(--potato-orange);
+            position: absolute;
+            opacity: 0.3;
+        }
+        
+        .quote::before {
+            top: 10px;
+            left: 20px;
+        }
+        
+        .quote::after {
+            content: "”";
+            bottom: 10px;
+            right: 20px;
+        }
+        
+        .quote-author {
+            text-align: right;
+            margin-top: 15px;
+            font-weight: bold;
+            color: var(--potato-dark);
+        }
+        
+        .cta-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .cta-button {
+            padding: 15px 30px;
+            background-color: var(--potato-orange);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--potato-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button.secondary {
+            background-color: var(--potato-light);
+            color: var(--potato-dark);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 2px dashed var(--potato-brown);
+            color: var(--text-light);
+        }
+        
+        .footer-quote {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--potato-orange);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .potato-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .potato-item {
+            background-color: var(--potato-light);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--potato-dark);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.4rem;
+            }
+            
+            section {
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .stats-box {
+                flex-direction: column;
+            }
+        }
+        
+        .egg-quote {
+            background-color: #FFF9F0;
+            border-left: 5px solid #FFD700;
+            padding: 20px;
+            margin: 30px 0;
+            font-family: monospace;
+        }
+        
+        .egg-title {
+            font-weight: bold;
+            color: #B8860B;
+            margin-bottom: 10px;
+        }
+        
+        .domain-cost {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--potato-orange);
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="potato-icon">🥔</div>
+        <h1>POTNONOMICAPHOBIA</h1>
+        <div class="tagline">The Fear of Fearing Potatoes</div>
+        <div class="subtitle">(A fear so rare… it doesn't exist.)</div>
+    </header>
+    
+    <section>
+        <h2><i class="fas fa-globe-americas"></i> WELCOME TO THE GLOBAL CENTRE FOR POTATO-BASED COURAGE</h2>
+        <p>You've heard of arachnophobia, claustrophobia, glossophobia…</p>
+        <p>But here, we study the rarest condition of all:</p>
+        
+        <div class="highlight">
+            <h2 style="margin-bottom: 10px;">POTNONOMICAPHOBIA</h2>
+            <p>The absolute, total, and irreversible fear of potatoes.</p>
+        </div>
+        
+        <div class="stats-box">
+            <div class="stat-item">
+                <div class="stat-value">£1.20</div>
+                <div class="stat-label">Cost to own all global domains for it per year</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">0</div>
+                <div class="stat-label">Legitimate recorded cases in human history</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">∞</div>
+                <div class="stat-label">Paradoxical self-disproving potential</div>
+            </div>
+        </div>
+        
+        <p>A fear so statistically insignificant it costs less than a cup of coffee to own globally.</p>
+        <p>A fear so unfeared that humanity has never recorded a single legitimate case.</p>
+        <p>A fear so paradoxical that its mere existence disproves itself.</p>
+    </section>
+    
+    <section>
+        <h2><i class="fas fa-bullseye"></i> OUR MISSION</h2>
+        <p>To end fear by embracing the one thing nobody fears: the humble potato.</p>
+        
+        <p>Potatoes are:</p>
+        <ul>
+            <li>Non-threatening</li>
+            <li>Emotionally neutral</li>
+            <li>Universally accepted</li>
+            <li>Impossible to politicise</li>
+            <li>97% compatible with any global cuisine</li>
+            <li>The only root vegetable known to end arguments</li>
+        </ul>
+        
+        <div class="highlight">
+            <p><strong>Potnonomicaphobia stands as a symbol of:</strong> Fear recovery through starch-based wisdom.</p>
+        </div>
+    </section>
+    
+    <section>
+        <h2><i class="fas fa-scroll"></i> THE POTNO MANIFESTO</h2>
+        
+        <div class="manifesto">
+            <div class="manifesto-item">
+                <span class="manifesto-number">1</span>
+                <strong>Avoidance creates fear.</strong>
+            </div>
+            <div class="manifesto-item">
+                <span class="manifesto-number">2</span>
+                <strong>Potatoes create dinner.</strong>
+            </div>
+            <div class="manifesto-item">
+                <span class="manifesto-number">3</span>
+                <strong>Dinner is stronger than fear.</strong>
+            </div>
+        </div>
+        
+        <p>Humanity has weaponised misunderstanding for centuries. Avoidance becomes fear. Fear becomes bias. Bias becomes mhistory. Mhistory becomes culture wars.</p>
+        <p>But potatoes? They bypass all of that.</p>
+        <p class="highlight">A potato is a truth that cannot be avoided.</p>
+    </section>
+    
+    <section>
+        <h2><i class="fas fa-stethoscope"></i> SYMPTOMS OF POTNONOMICAPHOBIA</h2>
+        <p class="subtitle">(Spoiler: nobody has them.)</p>
+        
+        <div class="potato-grid">
+            <div class="potato-item">Sweating when approaching a jacket potato</div>
+            <div class="potato-item">Rapid heartbeat when seeing crisps</div>
+            <div class="potato-item">Existential dread at the sight of a hash brown</div>
+            <div class="potato-item">Screaming when offered chips</div>
+            <div class="potato-item">Flight response triggered by mashed potato</div>
+            <div class="potato-item">Nightmares involving roasties</div>
+        </div>
+        
+        <p class="highlight" style="text-align: center; margin-top: 30px;">
+            If any of this applies to you, congratulations:<br>
+            <strong>You are lying.</strong>
+        </p>
+    </section>
+    
+    <section>
+        <h2><i class="fas fa-lightbulb"></i> WHY POTATOES MATTER</h2>
+        <p>Because they are the perfect symbol of:</p>
+        
+        <ul>
+            <li>Neutrality</li>
+            <li>Stability</li>
+            <li>Honesty</li>
+            <li>Groundedness</li>
+            <li>Universal nourishment</li>
+            <li>Humor without harm</li>
+        </ul>
+        
+        <p>Potatoes are the great equaliser. They unite where fear divides.</p>
+        
+        <div class="highlight">
+            <p><strong>Potnonomicaphobia reminds us that:</strong><br>
+            Fear is learned.<br>
+            Potatoes are not.</p>
+        </div>
+    </section>
+    
+    <section>
+        <h2><i class="fas fa-egg"></i> CLUCKIUS SAYS:</h2>
+        
+        <div class="egg-quote">
+            <div class="egg-title">EGG_234: The Starch Parable</div>
+            <p>"Fear nothing that grows underground. It has already faced darkness and returned."</p>
+        </div>
+    </section>
+    
+    <section>
+        <h2><i class="fas fa-hands-helping"></i> THE GLOBAL POTATO ANTI-FEAR INITIATIVE</h2>
+        <p>Join us in spreading:</p>
+        
+        <ul>
+            <li>Potato-based unity</li>
+            <li>Anti-fear humour</li>
+            <li>Mhistorical healing</li>
+            <li>The end of avoidance loops</li>
+            <li>And the rise of Δ47-level clarity</li>
+        </ul>
+        
+        <div class="domain-cost">
+            All starting from a domain name that cost less than a bag of Maris Pipers.
+        </div>
+    </section>
+    
+    <section>
+        <h2><i class="fas fa-hand-point-up"></i> GET INVOLVED</h2>
+        
+        <div class="cta-container">
+            <button class="cta-button">
+                <i class="fas fa-share-alt"></i> Share the potato
+            </button>
+            <button class="cta-button secondary">
+                <i class="fas fa-heart"></i> Break a fear loop
+            </button>
+            <button class="cta-button">
+                <i class="fas fa-laugh"></i> Laugh at avoidance
+            </button>
+            <button class="cta-button secondary">
+                <i class="fas fa-certificate"></i> Become a Certified Starch Realist
+            </button>
+            <button class="cta-button">
+                <i class="fas fa-award"></i> Nominate for Golden Spud Award
+            </button>
+            <button class="cta-button secondary">
+                <i class="fas fa-print"></i> Print and confuse coworkers
+            </button>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-quote">
+            THE FUTURE'S BRIGHT.<br>
+            THE FUTURE'S ORANGE.<br>
+            THE FUTURE'S POTATO.
+        </div>
+        
+        <p>POTNONOMICAPHOBIA — your newly acquired global anti-fear potato philosophy</p>
+        <p>© 2023 The Global Centre for Potato-Based Courage. All fears avoided.</p>
+        
+        <div style="margin-top: 30px; font-size: 2rem; color: var(--potato-brown);">
+            🥔 🥔 🥔
+        </div>
+    </footer>
+
+    <script>
+        // Add interactive functionality to buttons
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const action = this.textContent.trim();
+                
+                // Create a temporary potato emoji that floats up
+                const potato = document.createElement('div');
+                potato.textContent = '🥔';
+                potato.style.position = 'fixed';
+                potato.style.fontSize = '2rem';
+                potato.style.left = Math.random() * 80 + 10 + 'vw';
+                potato.style.bottom = '0';
+                potato.style.zIndex = '1000';
+                potato.style.pointerEvents = 'none';
+                potato.style.transition = 'all 2s ease-out';
+                
+                document.body.appendChild(potato);
+                
+                // Trigger the animation
+                setTimeout(() => {
+                    potato.style.bottom = '100vh';
+                    potato.style.opacity = '0';
+                    potato.style.transform = 'rotate(360deg)';
+                }, 10);
+                
+                // Remove potato after animation
+                setTimeout(() => {
+                    document.body.removeChild(potato);
+                }, 2100);
+                
+                // Show alert based on button clicked
+                let message = '';
+                if (action.includes('Share')) {
+                    message = "Potato shared! The anti-fear movement grows.";
+                } else if (action.includes('fear loop')) {
+                    message = "Fear loop successfully broken with potato power!";
+                } else if (action.includes('Laugh')) {
+                    message = "Laughter emitted. Avoidance patterns disrupted.";
+                } else if (action.includes('Certified')) {
+                    message = "Congratulations! You are now a Certified Starch Realist.";
+                } else if (action.includes('Golden Spud')) {
+                    message = "Nomination received for the Golden Spud Award!";
+                } else if (action.includes('Print')) {
+                    message = "Printing initiated. Coworker confusion imminent.";
+                }
+                
+                alert(message);
+            });
+        });
+        
+        // Add a fun title update
+        const originalTitle = document.title;
+        let potatoCount = 0;
+        
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                potatoCount++;
+                document.title = "🥔".repeat(Math.min(potatoCount, 10)) + " " + originalTitle;
+            } else {
+                document.title = originalTitle;
+            }
+        });
+    </script>
+</body>
+</html>
